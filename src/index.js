@@ -21,36 +21,31 @@ slidersInit('.about__slider', {
 	},
 });
 
+const careerImageItems = document.querySelectorAll('.career__image-item');
+
+careerImageItems.forEach((item, i) => {
+	item.classList.add(`career__image-item_${i % 2 ? 'even' : 'odd'}`);
+});
+
 slidersInit('.career__slider', {
 	pagination: {
 		el: '.career__slider-pagination',
 	},
 	breakpoints: {
-		320: {
-			pagination: {
-				enabled: true,
-			},
-		},
-		768: {
+		576: {
 			slidesPerView: 'auto',
 			spaceBetween: 20,
-			pagination: {
-				enabled: false,
-			},
+			pagination: false,
 		},
 		1024: {
 			slidesPerView: 'auto',
 			spaceBetween: 26,
-			pagination: {
-				enabled: false,
-			},
+			pagination: false,
 		},
 		1240: {
 			slidesPerView: 'auto',
 			spaceBetween: 30,
-			pagination: {
-				enabled: false,
-			},
+			pagination: false,
 		},
 	},
 });

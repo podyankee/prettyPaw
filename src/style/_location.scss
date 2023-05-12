@@ -4,12 +4,31 @@
 	&__list {
 		position: relative;
 		z-index: 10;
+		--opacity: 0;
+		--background-image: none;
 
 		@include lg {
 			display: flex;
 			justify-content: space-between;
 			min-height: 552px;
-			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				background-position: center;
+				background-size: cover;
+				opacity: var(--opacity);
+				background-image: var(--background-image);
+			}
 		}
 
 		@include xl {
@@ -37,7 +56,7 @@
 
 		@include lg {
 			background-image: none;
-			flex: 0 0 calc(100% / 5);
+			width: 20%;
 			padding: 0;
 		}
 

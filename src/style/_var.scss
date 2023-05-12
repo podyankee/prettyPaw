@@ -2,6 +2,12 @@ $back: #FFAA05;
 $main: #000;
 $second: #fff;
 
+@mixin trs($trs: all) {
+	transition: $trs 0.5s ease-in-out
+}
+
+;
+
 @mixin sm {
 	@media (min-width: 576px) {
 		@content;
