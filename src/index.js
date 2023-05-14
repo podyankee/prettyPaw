@@ -1,4 +1,5 @@
 import './index.html';
+import './page.html';
 //new modules
 import 'swiper/scss';
 import 'swiper/scss/pagination';
@@ -6,10 +7,13 @@ import './index.scss';
 import { slidersInit } from './modules/sliders';
 import { videoBackgroundInit } from './modules/videoBackground';
 import { menuControl } from './modules/menuControls';
+import { locationHover } from './modules/locationHover.js';
 
 // use modules
 
 menuControl();
+
+locationHover();
 
 videoBackgroundInit();
 
