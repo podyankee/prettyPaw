@@ -9,6 +9,7 @@ import { videoBackgroundInit } from './modules/videoBackground';
 import { menuControl } from './modules/menuControls';
 import { locationHover } from './modules/locationHover.js';
 import { initScrollTopButton } from './modules/scrollToTopButton';
+import { pageControlInit } from './modules/pageControl';
 
 // use modules
 
@@ -18,6 +19,8 @@ locationHover();
 
 videoBackgroundInit();
 
+pageControlInit();
+
 initScrollTopButton('arrow-top', {
 	hover: false,
 });
@@ -25,6 +28,7 @@ initScrollTopButton('arrow-top', {
 slidersInit('.about__slider', {
 	pagination: {
 		el: '.about__slider-pagination',
+		enabled: true,
 		// bulletClass: 'about__bullet',
 		// bulletActiveClass: 'about__bullet_active',
 	},
@@ -39,22 +43,29 @@ careerImageItems.forEach((item, i) => {
 slidersInit('.career__slider', {
 	pagination: {
 		el: '.career__slider-pagination',
+		enabled: true,
 	},
 	breakpoints: {
 		576: {
 			slidesPerView: 'auto',
 			spaceBetween: 20,
-			pagination: false,
+			pagination: {
+				enabled: false,
+			},
 		},
 		1024: {
 			slidesPerView: 'auto',
 			spaceBetween: 26,
-			pagination: false,
+			pagination: {
+				enabled: false,
+			},
 		},
 		1240: {
 			slidesPerView: 'auto',
 			spaceBetween: 30,
-			pagination: false,
+			pagination: {
+				enabled: false,
+			},
 		},
 	},
 });
